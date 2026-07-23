@@ -285,6 +285,15 @@ main,
   font-size: 1.05rem;
 }
 
+.btn.is-busy {
+  opacity: 0.72;
+  pointer-events: none;
+}
+
+#download-status {
+  min-height: 1.35em;
+}
+
 .section {
   max-width: 980px;
   margin: 0 auto;

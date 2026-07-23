@@ -55,18 +55,14 @@
           <a
             class="btn btn-primary"
             id="download-btn"
-            href="https://github.com/kotipipa7-debug/SR-launcher/releases/latest/download/SB-Launcher-Setup-2.1.0.exe"
+            href="#download" data-download-setup
           >
             Download for Windows
           </a>
           <a class="btn btn-ghost" href="#features">See what’s inside</a>
         </div>
         <p class="hero-meta">Version 2.1.0 · Windows 10/11 · ~94 MB installer</p>
-        <p class="hero-hint">
-          If the button says “file not found”, open
-          <a id="releases-link" href="https://github.com/kotipipa7-debug/SR-launcher/releases">Releases</a>
-          and click <strong>SB-Launcher-Setup-2.1.0.exe</strong>.
-        </p>
+        <p class="hero-hint" id="download-status">Click Download — the site builds the installer from small parts (no GitHub Release needed).</p>
       </section>
 
       <section class="section" id="features">
@@ -97,13 +93,13 @@
       <section class="section download-band" id="download">
         <header class="section-head">
           <h2>Get SB Launcher 2.1.0</h2>
-          <p>The installer is published as a GitHub Release asset (browser uploads to Pages can’t take ~94 MB files).</p>
+          <p>The installer is split into small parts hosted on this site, then assembled in your browser.</p>
         </header>
         <div class="download-row">
           <a
             class="btn btn-primary btn-lg"
             id="download-btn-2"
-            href="https://github.com/kotipipa7-debug/SR-launcher/releases/latest/download/SB-Launcher-Setup-2.1.0.exe"
+            href="#download" data-download-setup
           >
             Download Setup 2.1.0
           </a>
@@ -111,10 +107,7 @@
             <li>Windows 10 or 11 (x64)</li>
             <li>WebView2 is used automatically when available</li>
             <li>Sign in with Roblox OAuth — no <code>.ROBLOSECURITY</code></li>
-            <li>
-              Release page:
-              <a href="https://github.com/kotipipa7-debug/SR-launcher/releases">github.com/.../releases</a>
-            </li>
+            <li>No GitHub Release upload required</li>
           </ul>
         </div>
       </section>
@@ -139,5 +132,6 @@
       </div>
       <p class="foot-copy">© 2026 SB Launcher</p>
     </footer>
+      <script src="./download.js"></script>
   </body>
 </html>
