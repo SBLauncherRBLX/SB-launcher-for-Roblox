@@ -1,6 +1,9 @@
 (function () {
-  const MANIFEST_URL = "./downloads/parts/manifest.json";
-  const PARTS_BASE = "./downloads/parts/";
+  // Files may be at repo root (browser upload) or under downloads/parts/
+  const CANDIDATES = [
+    { manifest: "./manifest.json", partsBase: "./" },
+    { manifest: "./downloads/parts/manifest.json", partsBase: "./downloads/parts/" },
+  ];
 
   async function downloadAssembled() {
     const status = document.getElementById("download-status");
@@ -15,25 +18,33 @@
 
     try {
       setStatus("Preparing download…");
-      const manifestRes = await fetch(MANIFEST_URL, { cache: "no-store" });
-      if (!manifestRes.ok) {
-        throw new Error("Manifest missing. Upload docs/site/downloads/parts/ to GitHub.");
+      let manifest = null;
+      let partsBase = "./";
+      for (const c of CANDIDATES) {
+        const manifestRes = await fetch(c.manifest, { cache: "no-store" });
+        if (manifestRes.ok) {
+          manifest = await manifestRes.json();
+          partsBase = c.partsBase;
+          break;
+        }
       }
-      const manifest = await manifestRes.json();
+      if (!manifest) {
+        throw new Error(
+          "Manifest missing. Upload manifest.json + setup.part01–05.bin next to index.html.",
+        );
+      }
       const chunks = [];
-      let loaded = 0;
       const total = manifest.parts.length;
 
       for (let i = 0; i < manifest.parts.length; i++) {
         const name = manifest.parts[i];
         setStatus(`Downloading part ${i + 1} of ${total}…`);
-        const res = await fetch(PARTS_BASE + name, { cache: "no-store" });
+        const res = await fetch(partsBase + name, { cache: "no-store" });
         if (!res.ok) {
           throw new Error(`Part not found: ${name}`);
         }
         const buf = await res.arrayBuffer();
         chunks.push(buf);
-        loaded += buf.byteLength;
       }
 
       setStatus("Building installer…");
