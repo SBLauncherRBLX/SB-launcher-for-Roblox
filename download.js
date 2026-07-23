@@ -56,7 +56,7 @@
       const url = URL.createObjectURL(blob);
       const a = document.createElement("a");
       a.href = url;
-      a.download = manifest.fileName || "SB-Launcher-Setup-2.1.0.exe";
+      a.download = manifest.fileName || "SB-Launcher-Setup-2.2.0.exe";
       document.body.appendChild(a);
       a.click();
       a.remove();
