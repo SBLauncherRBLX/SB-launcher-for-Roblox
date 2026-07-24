@@ -24,7 +24,7 @@
     });
 
     try {
-      setStatus("Preparing download…");
+      setStatus("Preparing download...");
       let manifest = null;
       let partsBase = "./";
       for (const c of CANDIDATES) {
@@ -49,7 +49,7 @@
 
       for (let i = 0; i < manifest.parts.length; i++) {
         const name = manifest.parts[i];
-        setStatus(`Downloading part ${i + 1} of ${total}…`);
+        setStatus(`Downloading part ${i + 1} of ${total}...`);
         const res = await fetch(partsBase + name, { cache: "no-store" });
         if (!res.ok) {
           throw new Error(`Part not found: ${name}`);
@@ -64,7 +64,7 @@
         chunks.push(buf);
       }
 
-      setStatus("Verifying installer…");
+      setStatus("Verifying installer...");
       const blob = new Blob(chunks, { type: "application/octet-stream" });
       if (manifest.totalBytes && blob.size !== manifest.totalBytes) {
         throw new Error(
