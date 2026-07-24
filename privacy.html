@@ -8,21 +8,20 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&family=Sora:wght@500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Outfit:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
-    <div class="atmosphere" aria-hidden="true">
-      <div class="orb orb-a"></div>
-      <div class="orb orb-b"></div>
-      <div class="stars"></div>
+    <div class="stage" aria-hidden="true">
+      <div class="stage-grid"></div>
+      <div class="stage-wash"></div>
     </div>
     <main class="page narrow">
       <a class="back" href="./index.html">← SB Launcher</a>
       <h1>Privacy Policy</h1>
-      <p class="meta">Last updated: July 23, 2026</p>
+      <p class="meta">Last updated: July 24, 2026</p>
 
       <h2>Who we are</h2>
       <p>
@@ -36,33 +35,26 @@
         <li>SB Launcher session identifiers</li>
         <li>Optional favorites, launch history, theme presets, and outfit presets</li>
         <li>Local preferences such as visuals and graphics settings</li>
+        <li>Optional public profile cosmetics synced through our Cloudflare Worker</li>
       </ul>
 
-      <h2>What we do not store</h2>
+      <h2>What we do not do</h2>
       <ul>
-        <li>Roblox passwords</li>
-        <li><code>.ROBLOSECURITY</code> cookies</li>
-        <li>Payment or billing card data</li>
+        <li>We do not ask for or store your Roblox password</li>
+        <li>We do not sell personal data</li>
+        <li>We do not require an account separate from Roblox OAuth</li>
       </ul>
 
-      <h2>How data is used</h2>
+      <h2>Cloud services</h2>
       <p>
-        Data is used only to sign you in, load your Roblox profile/friends/avatar
-        information you request, and remember launcher preferences. We do not sell
-        personal data.
-      </p>
-
-      <h2>Where data lives</h2>
-      <p>
-        On the Windows desktop app, data is kept locally under
-        <code>%LOCALAPPDATA%\SB Launcher</code> on your machine. Hosted API
-        deployments store only what is required for that deployment’s session and
-        preference features.
+        If cloud features are enabled, your Roblox user id, display name, and
+        public cosmetics may be stored so other SB Launcher users can see them.
+        Update checks use a public version manifest.
       </p>
 
       <h2>Contact</h2>
       <p>
-        For privacy questions about SB Launcher, open an issue on the project’s
+        Questions about this policy can be opened as an issue on the project
         GitHub repository.
       </p>
     </main>
