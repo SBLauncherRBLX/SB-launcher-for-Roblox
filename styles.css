@@ -363,6 +363,22 @@ main,
   border-bottom: 1px solid var(--line);
 }
 
+.custom-preview:has(img) {
+  padding: 0;
+  height: auto;
+  background: transparent;
+  display: block;
+  border-bottom: 1px solid var(--line);
+}
+
+.custom-preview img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  object-position: top;
+  display: block;
+}
+
 .preview-top {
   display: flex;
   align-items: center;
