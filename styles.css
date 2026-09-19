@@ -484,6 +484,60 @@ main,
   font-size: 0.92rem;
 }
 
+.updates-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.update-card {
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 1.1rem 1.15rem;
+  background: color-mix(in srgb, var(--surface) 84%, transparent);
+  backdrop-filter: blur(10px);
+}
+
+.update-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.22rem 0.6rem;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--accent) 14%, transparent);
+  border: 1px solid color-mix(in srgb, var(--accent) 22%, transparent);
+  color: var(--accent);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.update-card h3 {
+  margin: 0.7rem 0 0.35rem;
+  font-size: 1.05rem;
+  font-weight: 750;
+  letter-spacing: -0.02em;
+}
+
+.update-card p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+
+.update-date {
+  display: inline-block;
+  margin-top: 0.7rem;
+  color: color-mix(in srgb, var(--muted) 78%, transparent);
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+
+.section-cta {
+  margin-top: 1.25rem;
+}
+
 .hero-meta {
   margin: 1.1rem 0 0;
   color: color-mix(in srgb, var(--muted) 82%, transparent);
@@ -750,8 +804,14 @@ main,
   }
 
   .feature-list,
-  .download-row {
+  .download-row,
+  .updates-grid,
+  .overview-grid {
     grid-template-columns: 1fr;
+  }
+
+  .custom-card {
+    flex: 0 0 84%;
   }
 
   .hero {
